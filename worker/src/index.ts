@@ -1,5 +1,10 @@
 import { createClient } from "redis";
-const redisClient = createClient();
+
+const REDIS_URL = process.env.REDIS_URL
+
+const redisClient = createClient({
+    url: REDIS_URL
+});
 
 async function connectClient() {
     try {
